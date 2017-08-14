@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1"/>
+    <title>Main User</title>
+    <link href = "@{/css/styles.css}" rel = "stylesheet" type = "text/css"/>
+</head>
+<body>
+<h2>All Product Information</h2>
+<table cellpadding="2" cellspacing="2">
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Photo</th>
+    </tr>
+    <tr th:each= "product,iterStat:${productList}">
+        <td><span th:text = "${product.id}"></span></td>
+        <td><span th:text = "${product.name}"></span></td>
+        <td><img th:src="@{'/images/'+ ${product.photo}}"/></td>
+    </tr>
+</table>
+</body>
+</html>
