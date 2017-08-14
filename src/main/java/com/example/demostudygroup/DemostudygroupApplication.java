@@ -8,6 +8,7 @@ import com.example.demostudygroup.dao.*;
 public class DemostudygroupApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(DemostudygroupApplication.class, args);
 	}
 }
