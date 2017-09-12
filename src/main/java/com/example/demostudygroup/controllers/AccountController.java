@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/v1")
+@RequestMapping
 public class AccountController {
 
     @RequestMapping(value = "/getAccount", method = RequestMethod.GET ,produces = MediaType.APPLICATION_JSON_VALUE)
@@ -21,9 +21,9 @@ public class AccountController {
         public ResponseEntity<Object> getCustomerAccountDetails(){
 
             Customer customer = new Customer();
-            customer.setAccountNumber("500");
-            customer.setAvailableBalance(5000);
-            customer.setCustomerName("nameCustomer");
+            customer.setAccountNumber("700");
+            customer.setAvailableBalance(8000);
+            customer.setCustomerName("newCustomer");
 
 
             return new ResponseEntity<Object>(customer, HttpStatus.OK);
