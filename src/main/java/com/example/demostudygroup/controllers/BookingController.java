@@ -23,7 +23,7 @@ public class BookingController {
         return bookingRepository.findAll();
     }
 
-    @RequestMapping(value ="affordable/{price}",method = RequestMethod.GET)
+    @RequestMapping(value ="/affordable/{price}",method = RequestMethod.GET)
     public List<HotelBooking> getAffordable(@PathVariable double price){
        return bookingRepository.findByPricePerNightLessThan(price);
 
@@ -35,7 +35,7 @@ public class BookingController {
        return bookingRepository.findAll();
     }
 
-    @RequestMapping(value ="/delete/{id}", method = RequestMethod.GET)
+    @RequestMapping(value ="/delete/{id}", method = RequestMethod.POST)
     public List<HotelBooking> remove(@PathVariable long id){
         bookingRepository.delete(id);
         return bookingRepository.findAll();
